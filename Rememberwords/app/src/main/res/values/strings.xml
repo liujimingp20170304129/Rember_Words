@@ -5,4 +5,8 @@
     <string name="btn_update">Update</string>
     <string name="btn_clear">Clear</string>
     <string name="btn_delete">Delete</string>
+    <string name="tv_number">1</string>
+    <string name="tv_english">TextView</string>
+    <string name="tv_chinese">TextView</string>
+    <string name="switch1">CardView</string>
 </resources>

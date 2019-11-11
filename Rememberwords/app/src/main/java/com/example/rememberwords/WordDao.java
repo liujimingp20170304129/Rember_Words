@@ -1,5 +1,6 @@
 package com.example.rememberwords;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
 import androidx.room.Insert;
@@ -23,5 +24,6 @@ public interface WordDao {
     void deleteAllWords();
 
     @Query("select * from word order by id desc")
-    List<Word> getAllWords();
+    //LiveData观察数据发生变化
+    LiveData<List<Word>>getAllWordsLive();
 }
