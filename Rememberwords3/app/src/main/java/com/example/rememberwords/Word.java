@@ -16,6 +16,28 @@ public class Word {
     @ColumnInfo(name = "chinese_meaing")
     private String chineseMeaning;
 
+    @ColumnInfo(name = "hidden_chinese")
+    private boolean hiddenChinese;
+
+    public boolean isHiddenChinese() {
+        return hiddenChinese;
+    }
+
+    public void setHiddenChinese(boolean hiddenChinese) {
+        this.hiddenChinese = hiddenChinese;
+    }
+
+    //    @ColumnInfo(name = "foo_bar")
+//    private int foo;
+//
+//    public int getFoo() {
+//        return foo;
+//    }
+//
+//    public void setFoo(int foo) {
+//        this.foo = foo;
+//    }
+
     public Word(String word, String chineseMeaning) {
         this.word = word;
         this.chineseMeaning = chineseMeaning;

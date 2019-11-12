@@ -29,8 +29,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerview);
-        layoutAdapter1 = new LayoutAdapter(false);
-        layoutAdapter2 = new LayoutAdapter(true);
+
+        wordViewModel = ViewModelProviders.of(this).get(WordViewModel.class);
+
+        layoutAdapter1 = new LayoutAdapter(false,wordViewModel);
+        layoutAdapter2 = new LayoutAdapter(true,wordViewModel);
         //将recyclerview设置成线性布局
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(layoutAdapter1);
@@ -48,17 +51,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        wordViewModel = ViewModelProviders.of(this).get(WordViewModel.class);
+
 
         //LiveData监听数据变化
         wordViewModel.getAllWordsLive().observe(this, new Observer<List<Word>>() {
             @Override
             public void onChanged(List<Word> words) {
+                int temp = layoutAdapter1.getItemCount();
                 layoutAdapter1.setAllWords(words);
                 layoutAdapter2.setAllWords(words);
-                //刷新视图
-                layoutAdapter1.notifyDataSetChanged();
-                layoutAdapter2.notifyDataSetChanged();
+                if (temp != words.size()){
+                    //刷新视图
+                    layoutAdapter1.notifyDataSetChanged();
+                    layoutAdapter2.notifyDataSetChanged();
+                }
             }
         });
 
