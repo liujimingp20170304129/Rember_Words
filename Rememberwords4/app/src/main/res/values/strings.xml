@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Remember words</string>
+    <string name="textview">TextView</string>
+    <string name="btn_insert">Insert</string>
+    <string name="btn_update">Update</string>
+    <string name="btn_clear">Clear</string>
+    <string name="btn_delete">Delete</string>
+    <string name="tv_number">1</string>
+    <string name="tv_english">TextView</string>
+    <string name="tv_chinese">TextView</string>
+    <string name="switch1">CardView</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="add_words">添加单词</string>
+    <string name="english_words">英语单词</string>
+    <string name="chinese_meaning">中文释义</string>
+    <string name="btn_submit">提交</string>
+    <string name="clear_data">清空数据</string>
+    <string name="switch_views">切换视图</string>
+</resources>
