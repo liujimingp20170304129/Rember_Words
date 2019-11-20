@@ -26,4 +26,9 @@ public interface WordDao {
     @Query("select * from word order by id desc")
     //LiveData观察数据发生变化
     LiveData<List<Word>>getAllWordsLive();
+
+    //模糊查询
+    @Query("select * from word where english_word like :patten order by id desc")
+    LiveData<List<Word>>findWordsWithPatten(String patten);
+
 }

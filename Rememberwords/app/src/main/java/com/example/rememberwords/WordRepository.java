@@ -6,11 +6,10 @@ import android.os.AsyncTask;
 import androidx.lifecycle.LiveData;
 
 import java.util.List;
-
-public class WordRepository {
+ class WordRepository {
     private LiveData<List<Word>>allWordsLive;
     private WordDao wordDao;
-    public WordRepository(Context context) {
+    WordRepository(Context context) {
 //把WordDatabase作为参数传进来
         WordDatabase wordDatabase = WordDatabase.getDatabase(context.getApplicationContext());
         wordDao = wordDatabase.getWordDao();
@@ -34,6 +33,9 @@ public class WordRepository {
 
      LiveData<List<Word>> getAllWordsLive() {
         return allWordsLive;
+    }
+    LiveData<List<Word>>findWordsWithPatten(String patten){
+        return wordDao.findWordsWithPatten("%" + patten + "%");
     }
 
 

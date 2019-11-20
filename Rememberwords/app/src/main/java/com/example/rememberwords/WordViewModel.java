@@ -24,6 +24,9 @@ public class WordViewModel extends AndroidViewModel {
     LiveData<List<Word>> getAllWordsLive() {
         return wordRepository.getAllWordsLive();
     }
+    LiveData<List<Word>>findWordsWithPatten(String patten){
+        return wordRepository.findWordsWithPatten(patten);
+    }
 
     //操作数据的接口
     void insertWords(Word... words) {

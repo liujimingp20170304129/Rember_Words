@@ -21,7 +21,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
-    <autoscroll-from-editor value="true" />
+    <autoscroll-from-editor value="false" />
     <show-object-properties value="true" />
     <loaded-nodes />
   </component>
@@ -417,9 +417,9 @@
         <mapping file-type-id="TYPE_BODY" extensions="tpb" />
       </extensions>
       <general>
-        <lookup-ddl-files value="true" />
+        <lookup-ddl-files value="false" />
         <create-ddl-files value="false" />
-        <synchronize-ddl-files value="true" />
+        <synchronize-ddl-files value="false" />
         <use-qualified-names value="true" />
         <make-scripts-rerunnable value="true" />
       </general>
